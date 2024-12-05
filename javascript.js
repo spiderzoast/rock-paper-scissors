@@ -12,3 +12,14 @@ function getComputerChoice() {
   console.log(computerChoice);
   return computerChoice;
 }
+
+function getHumanChoice() {
+  let humanChoice = window.prompt("Choose your option between Rock, Paper or Scissors:");
+  if (humanChoice != "Rock" && humanChoice != "Paper" && humanChoice != "Scissors") {
+    do {
+      humanChoice = window.prompt("Invalid choice, please choose a valid option between Rock, Paper or Scissors:");
+    } while (humanChoice != "Rock" && humanChoice != "Paper" && humanChoice != "Scissors");
+  }
+  console.log(humanChoice);
+  return humanChoice;
+}
