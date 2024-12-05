@@ -16,12 +16,18 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt("Choose your option between Rock, Paper or Scissors:");
+  let humanChoice = fixCaseSensitive(prompt("Choose your option between Rock, Paper or Scissors:"));
   if (humanChoice != "Rock" && humanChoice != "Paper" && humanChoice != "Scissors") {
     do {
-      humanChoice = prompt("Invalid choice, please choose a valid option between Rock, Paper or Scissors:");
+      humanChoice = fixCaseSensitive(prompt("Invalid choice, please choose a valid option between Rock, Paper or Scissors:"));
     } while (humanChoice != "Rock" && humanChoice != "Paper" && humanChoice != "Scissors");
   }
   console.log(`You chose: ${humanChoice}`);
   return humanChoice;
 }
+
+function fixCaseSensitive (stringToFix) {
+  return String(stringToFix.charAt(0).toUpperCase()) + String(stringToFix.slice(1).toLowerCase());
+}
+
+getHumanChoice();
