@@ -8,8 +8,7 @@ function getComputerChoice() {
   } else {
     computerChoice = "Scissors";
   }
-  console.log(randomNumber);
-  console.log(computerChoice);
+  console.log(`The computer chose: ${computerChoice}`);
   return computerChoice;
 }
 
@@ -20,6 +19,6 @@ function getHumanChoice() {
       humanChoice = prompt("Invalid choice, please choose a valid option between Rock, Paper or Scissors:");
     } while (humanChoice != "Rock" && humanChoice != "Paper" && humanChoice != "Scissors");
   }
-  console.log(humanChoice);
+  console.log(`You chose: ${humanChoice}`);
   return humanChoice;
 }
