@@ -16,10 +16,10 @@ function getComputerChoice() {
 // User chooses one of the 3 possible options
 function getHumanChoice() {
   let humanChoice = fixCaseSensitive(prompt("Choose your option between Rock, Paper or Scissors:"));
-  if (humanChoice != "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors") {
+  if (humanChoice !== "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors") {
     do {
       humanChoice = fixCaseSensitive(prompt("*Invalid choice* Please choose a valid option between Rock, Paper or Scissors:"));
-    } while (humanChoice != "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors");
+    } while (humanChoice !== "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors");
   }
   console.log(`You choose: ${humanChoice}`);
   return humanChoice;
