@@ -8,7 +8,7 @@ function getComputerChoice() {
   } else {
     computerChoice = "Scissors";
   }
-  console.log(`The computer choses: ${computerChoice}`);
+  console.log(`The Computer choses: ${computerChoice}`);
   return computerChoice;
 }
 
@@ -29,12 +29,12 @@ function fixCaseSensitive (stringToFix) {
 
 function playRound (humanSelection, computerSelection) {
   if (humanSelection === computerSelection) {
-        console.log(`It's a draw! Both you and the computer chose ${humanSelection}.`);
+        console.log(`It's a draw! Both you and The Computer chose ${humanSelection}.`);
         return 0;
   } else if (
       (humanSelection === "Rock" && computerSelection === "Scissors") ||
       (humanSelection === "Paper" && computerSelection === "Rock") ||
-      (humanSelection = "Scissors" && computerSelection == "Paper")
+      (humanSelection === "Scissors" && computerSelection === "Paper")
     ) {
         console.log(`You win! ${humanSelection} beats ${computerSelection}.`);
         return 1;
@@ -57,22 +57,23 @@ function playGame () {
   let gameResult;
 
   for (let roundCounter = 1; roundCounter < 6; roundCounter++){
-    console.log(`Round ${i}!`);
-    gameResult = pĺayRound();
+    console.log(`Round ${roundCounter}!`);
+    gameResult = playRound(getHumanChoice(), getComputerChoice());
     if (gameResult === 1){
       humanScore++;
     } else if (gameResult === 2) {
         computerScore++;        
     }
+    console.log(`Current Score: You (${humanScore}), The Computer (${computerScore})`)
   }
 
   if (humanScore > computerScore) {
     console.log("And the final winner is...You!");
   } else if (humanScore < computerScore) {
-    console.log("And the final winner is...The computer!");
+    console.log("And the final winner is...The Computer!");
     console.log("Better luck next time...")
   } else {
-    console.log("And the winner is... no one! You and the computer had the same score!");
+    console.log("And the final winner is... no one! You and The Computer had the same score!");
   }
   return;
 }
