@@ -8,7 +8,7 @@ function getComputerChoice() {
   } else {
     computerChoice = "Scissors";
   }
-  console.log(`The Computer choses: ${computerChoice}`);
+  console.log(`The Computer chooses: ${computerChoice}`);
   return computerChoice;
 }
 
@@ -19,7 +19,7 @@ function getHumanChoice() {
       humanChoice = fixCaseSensitive(prompt("*Invalid choice* Please choose a valid option between Rock, Paper or Scissors:"));
     } while (humanChoice != "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors");
   }
-  console.log(`You chose: ${humanChoice}`);
+  console.log(`You choose: ${humanChoice}`);
   return humanChoice;
 }
 
