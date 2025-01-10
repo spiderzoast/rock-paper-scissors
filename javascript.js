@@ -12,21 +12,6 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getHumanChoice() {
-  let humanChoice = fixCaseSensitive(prompt("Choose your option between Rock, Paper or Scissors:"));
-  if (humanChoice !== "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors") {
-    do {
-      humanChoice = fixCaseSensitive(prompt("*Invalid choice* Please choose a valid option between Rock, Paper or Scissors:"));
-    } while (humanChoice !== "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors");
-  }
-  console.log(`You choose: ${humanChoice}`);
-  return humanChoice;
-}
-
-function capitalize (stringToFix) {
-  return String(stringToFix.charAt(0).toUpperCase()) + String(stringToFix.slice(1).toLowerCase());
-}
-
 function playRound (humanSelection, computerSelection) {
   if (humanSelection === computerSelection) {
         console.log(`It's a draw! Both you and The Computer chose ${humanSelection}.`);
@@ -51,31 +36,10 @@ function playRound (humanSelection, computerSelection) {
   }
 }
 
-function playGame () {
-  let humanScore = 0;
-  let computerScore = 0;
-  let gameResult;
+const buttons = document.querySelectorAll(".btn");
 
-  for (let roundCounter = 1; roundCounter < 6; roundCounter++){
-    console.log(`Round ${roundCounter}!`);
-    gameResult = playRound(getHumanChoice(), getComputerChoice());
-    if (gameResult === 1){
-      humanScore++;
-    } else if (gameResult === 2) {
-        computerScore++;        
-    }
-    console.log(`Current Score: You (${humanScore}), The Computer (${computerScore})`)
-  }
-
-  if (humanScore > computerScore) {
-    console.log("And the final winner is...You!");
-  } else if (humanScore < computerScore) {
-    console.log("And the final winner is...The Computer!");
-    console.log("Better luck next time...")
-  } else {
-    console.log("And the final winner is... no one! You and The Computer had the same score!");
-  }
-  return;
-}
-
-playGame();
+buttons.forEach((button) => {
+  button.addEventListener("click",() => {
+    playRound(getComputerChoice(), button.textContent);
+  });
+});
