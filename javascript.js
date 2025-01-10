@@ -23,7 +23,7 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-function fixCaseSensitive (stringToFix) {
+function capitalize (stringToFix) {
   return String(stringToFix.charAt(0).toUpperCase()) + String(stringToFix.slice(1).toLowerCase());
 }
 
