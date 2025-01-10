@@ -1,4 +1,3 @@
-// Computer randomly chooses an option
 function getComputerChoice() {
   let computerChoice = "";
   let randomNumber = Math.random();
@@ -13,7 +12,6 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-// User chooses one of the 3 possible options
 function getHumanChoice() {
   let humanChoice = fixCaseSensitive(prompt("Choose your option between Rock, Paper or Scissors:"));
   if (humanChoice !== "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors") {
@@ -25,8 +23,6 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-// This makes it so the user can write variations such as roCK, PAPER or sciSSors and it always returns in the same format,
-// basically eliminating case-senstivity, though they're still required to write the word properly.
 function fixCaseSensitive (stringToFix) {
   return String(stringToFix.charAt(0).toUpperCase()) + String(stringToFix.slice(1).toLowerCase());
 }
@@ -55,7 +51,6 @@ function playRound (humanSelection, computerSelection) {
   }
 }
 
-// Play five rounds where the user has to input one of 3 options and outputs the result of each round and the final winner
 function playGame () {
   let humanScore = 0;
   let computerScore = 0;
@@ -83,5 +78,4 @@ function playGame () {
   return;
 }
 
-// Play one game, perhaps will implement a replay in the future, meanwhile refreshing the page is necessary.
 playGame();
